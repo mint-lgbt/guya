@@ -62,7 +62,8 @@ INSTALLED_APPS = [
     'reader.apps.ReaderConfig',
     'homepage.apps.HomepageConfig',
     'misc.apps.MiscConfig',
-    'proxy.apps.ProxyConfig',
+    # just won't work without a lot of work, so away it goes (for now)
+    # 'proxy.apps.ProxyConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -162,7 +163,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_VERSION = "?v=" + subprocess.check_output(
-    f"git -C {BASE_DIR} rev-parse --short HEAD", shell=True, text=True
+    f"git -C {BASE_DIR} rev-parse --short HEAD", shell=True, universal_newlines=True
 )
 
 MEDIA_URL = "/media/"

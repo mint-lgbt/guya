@@ -26,7 +26,6 @@ from homepage.sitemaps import (
     PagesListViewSitemap,
     PageViewSitemap,
 )
-from proxy import sources
 
 sitemaps = {
     "static": StaticViewSitemap,
@@ -44,13 +43,6 @@ urlpatterns = [
     path("read/", include("reader.urls")),
     path("api/", include("api.urls")),
     path("pages/", include("misc.urls")),
-    path(
-        "",
-        include(
-            [route for source in sources for route in source.register_shortcut_routes()]
-        ),
-    ),
-    path("proxy/", include("proxy.urls")),
 ]
 
 handler404 = "homepage.views.handle404"

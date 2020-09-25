@@ -1,4 +1,5 @@
 from django.contrib import admin
+from .models import Page, Variable, Static
 
 # Register your models here.
 

@@ -8,7 +8,7 @@ import base64
 import subprocess
 from datetime import datetime
 from io import BytesIO
-from pillow import ImageFilter, Image
+from PIL import ImageFilter, Image
 from django.conf import settings
 from django.core.cache import cache
 from django.http import Http404
